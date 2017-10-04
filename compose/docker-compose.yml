@@ -1,0 +1,12 @@
+wordpress:
+  image: wordpress
+  links:
+    - base_wordpress:mysql
+  ports:
+    - 8080:80
+  volumes:
+    - ./wordpress/:/var/www/html
+base_wordpress:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: root
